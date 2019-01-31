@@ -1,0 +1,74 @@
+head{
+
+}
+body{
+  background-color: white;
+
+}
+
+.register-page{
+  width: 800px;
+  margin: auto;
+}
+.form{
+  background-color: lightgreen;
+  width: 600px;
+  margin:auto;
+  padding: 45px;
+  text-align: center;
+}
+.form input{
+   font-family: "Roboto", sans-serif;
+   outline: 3;
+   background: white;
+   width: 50%;
+   border: 0;
+   margin: 0 0 15px;
+   padding: 10px;
+   font-size: 14px;
+}
+
+.form button{
+    font font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #4CAF50;
+    width: 50%;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+.form button:hover,.form button:active{
+  background: #43A047;
+
+}
+.form .message{
+  margin: 15;
+  color: white;
+  font-size: 12px;
+}
+.form .message a{
+  color: White;
+}
+
+h1{
+  background: Green;
+  padding: 10px;
+  width: 100%;
+  font-family: Times New Roman;
+  font-size: 40px;
+  text-align: center;
+  color: White;
+  margin: 0;
+
+}
+h2{
+  background: Green;
+  padding: 10px;
+  width: 100%;
+  font-family: Times New Roman;
+  font-size: 20px;
+  text-align: center;
+  color: White;
+  margin: 0;
