@@ -1,5 +1,7 @@
 **Politico**
-Features:
+
+
+*Features*:
 - Users can sign up and login
 - Admin can create political parties
 - Admin can create gvt offices
