@@ -14,8 +14,8 @@
 - Users can vote
 - Admin can edit / delete political parties.
 
-**Autho**
+**Author:**
 Teddy Onyango
 
-**Credits**
+**Credits:**
 Andela Kenya
