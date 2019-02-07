@@ -9,7 +9,7 @@ class PartiesModel():
 
     @staticmethod
     def view_parties():
-        return PARTIES
+        return PARTIES  
 
     
     @staticmethod
