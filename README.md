@@ -1,4 +1,9 @@
+[![Badge for version for Visual Studio Code extension naereen.makefiles-support-for-vscode](https://vsmarketplacebadge.apphb.com/version/naereen.makefiles-support-for-vscode.svg)](https://marketplace.visualstudio.com/items?itemName=naereen.makefiles-support-for-vscode)
+
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
 **Politico**
+
 
 
 *Features*:
@@ -13,4 +18,4 @@
 Teddy Onyango
 
 **Credits**
-Andela
+Andela Kenya
