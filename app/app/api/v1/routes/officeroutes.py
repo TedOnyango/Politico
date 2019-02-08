@@ -4,6 +4,28 @@ from app.api.v1.models.partymodels import PartiesModel
 from app.api.v1.routes import endpoint
 
 
+@endpoint.route('/offices', methods=['POST'])
+def create_office():
+    data = request.get_json()
+    try:
+        type = data['type']
+        name = data['name']
+        id = data['id']
+    except:
+        return make_response(jsonify({"status": 400,
+									  "error": "Must provide id, name and type"
+									  }), 400)
+
+    newoffice = OfficeModel(name=name, type=type, id=id)
+    newoffice.save_office()
+
+    return make_response(jsonify({ "status": 201,
+									"data": [{
+										"type": type,
+										"name": name,
+										"id": id
+									}]
+								}), 201)
 
 
  
