@@ -21,3 +21,9 @@ def create_party():
                                       "logoUrl": logoUrl,
                                   }]
                                   }), 201)
+@endpoint.route('/parties', methods=['GET'])
+def view_parties():
+    if party:
+        return (jsonify({"status": 200,
+                                  "data": PartiesModel.view_parties()
+                                  }), 200)
