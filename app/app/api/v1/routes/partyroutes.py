@@ -52,4 +52,14 @@ def edit_parties(id):
     return make_response(jsonify({"status": 404,
                                   "error": "Party not found"
                                   }), 404)
-     
+@endpoint.route('/parties', methods=['DELETE'])
+def delete_party():
+    data = request.get_json()
+    id = data["id"]
+    if party:
+        return make_response(jsonify({"status": 200,
+                                  "data": PartiesModel.delete_party(id)
+                                  }), 200)
+    return make_response(jsonify({"status": 404, 
+                                    "data": "This party doesn't exist"
+                                    }), 404)
