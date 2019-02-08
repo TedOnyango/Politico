@@ -32,7 +32,18 @@ def get_office(id):
     if office:
         return make_response(jsonify({"status": 200, "data": office}), 200)
     return make_response(jsonify({"status": 404, "error": "We cant find this office"}), 404)
+    
+@endpoint.route('/offices/<int:id>')
+def get_specific_office(id):
+	office = OfficeModel.get_specific_office(id)
+	if office:
+		return make_response(jsonify({"status": 200,
+										"data": office
+									}), 200)
 
+	return make_response(jsonify({"status": 404,
+									"error": "Office not found"
+								}), 404)
 
 
  
