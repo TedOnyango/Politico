@@ -3,8 +3,7 @@
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 **Politico**
-
-
+Politico is an electoral software that with various features as shown below
 
 *Features*:
 - Users can sign up and login
