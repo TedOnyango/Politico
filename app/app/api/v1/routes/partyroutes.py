@@ -36,3 +36,20 @@ def get_specific_party(id):
     return make_response(jsonify({"status": 404, 
                                     "error": "Party cannot be found"
                                     }), 404)
+                                    @endpoint.route('/parties/<int:id>/name', methods=['PATCH'])
+def edit_parties(id):
+    try:
+        data = request.get_json()
+        name = data["name"]
+        return make_response(jsonify({"status": 200,
+                                  "data": [
+                                      {
+                                          "id": id,
+                                          "name": name
+                                      }
+                                  ]
+                                  }), 200)
+    return make_response(jsonify({"status": 404,
+                                  "error": "Party not found"
+                                  }), 404)
+     
