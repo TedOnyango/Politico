@@ -27,3 +27,12 @@ def view_parties():
         return (jsonify({"status": 200,
                                   "data": PartiesModel.view_parties()
                                   }), 200)
+@endpoint.route('/parties', methods=['GET'])
+def get_specific_party(id):
+    if party:
+        return make_response(jsonify({"status": 200,
+                                  "data": PartiesModel.get_specific_party(id)
+                                  }), 200)
+    return make_response(jsonify({"status": 404, 
+                                    "error": "Party cannot be found"
+                                    }), 404)
