@@ -32,7 +32,7 @@ def get_office(id):
     if office:
         return make_response(jsonify({"status": 200, "data": office}), 200)
     return make_response(jsonify({"status": 404, "error": "We cant find this office"}), 404)
-    
+
 @endpoint.route('/offices/<int:id>')
 def get_specific_office(id):
 	office = OfficeModel.get_specific_office(id)
@@ -45,5 +45,24 @@ def get_specific_office(id):
 									"error": "Office not found"
 								}), 404)
 
+@endpoint.route('/offices/<int:id>/name', methods=['PATCH'])
+def edit_office(id):
+    data = request.get_json()
+    name = data["name"]
+
+    office  = OfficeModel.edit_office(id, name)
+    if office:
+        return make_response(jsonify({"status": 200,
+                                  "data": [
+                                      {
+                                          "id": id,
+                                          "name": name
+                                      }
+                                  ]
+                                  }), 200)
+    return make_response(jsonify({"status": 404,
+                                  "error": "Party not found"
+                                  }), 404)
+     
 
  
