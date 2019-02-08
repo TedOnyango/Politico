@@ -9,7 +9,7 @@ class PartiesModel():
 
     @staticmethod
     def view_parties():
-        return PARTIES  
+        return PARTIES
 
     
     @staticmethod
@@ -27,7 +27,12 @@ class PartiesModel():
         PARTIES.append(party)
     @staticmethod
     def delete_party(id):
-        return [PARTIES.remove(party) for party in PARTIES if party["id"] == id]
+        found = False
+        for party in PARTIES:
+            if party.id == id:
+                PARTIES.remove(party)
+                found = True
+        return found
     
     @staticmethod
     def edit_party(id, name):

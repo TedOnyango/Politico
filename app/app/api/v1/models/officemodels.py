@@ -8,16 +8,20 @@ class OfficeModel():
         
     @staticmethod
     def view_all_offices():
-        return OFFICES
+        return [vars(office) for office in OFFICES]
 
     def save_office(self):
-        office = {
-            "id": self.id,
-            "name": self.name,
-            "type": self.type
-        }
-        OFFICES.append(office)
+        OFFICES.append(self)
+
+    @staticmethod
+    def edit_office(id, name):
+        edited = False
+        for office in OFFICES:
+           if(office["id"] == id):
+               office["name"] = name
+               edited = True
+        return edited
 
     @staticmethod
     def get_specific_office(id):
-        return [office for office in OFFICES if office["id"] == id]
+        return [vars(office) for office in OFFICES if office.id == id]
