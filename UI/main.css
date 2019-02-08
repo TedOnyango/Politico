@@ -1,3 +1,6 @@
+head{
+
+}
 body{
   background-color: white;
   background-size: 50% 50%;
@@ -15,12 +18,12 @@ body{
   float: center
 }
 
-
+}
 
 .register-page{
   width: 800px;
   margin: auto;
-} 
+}
 
 .register-form{
   width: 800px;
@@ -30,9 +33,9 @@ body{
 
 .form{
   background-color: lightgrey;
-  width: 50%;
+  background  width: 50%;
   background-size: 50px 25px;
-  margin: contain;
+  top margin: contain;
   padding: 25px;
   border-radius: 10px;
   text-align: center;
@@ -51,7 +54,7 @@ body{
 }
 
 .form button{
-    font-family: "Roboto", sans-serif;
+    font font-family: "Roboto", sans-serif;
     outline-color: invert;
     background: lightgrey;
     width: 50%;
@@ -86,7 +89,9 @@ h1{
   text-align: center;
   color: White;
   border-radius: 25px;
+
   margin: auto;
+
 
 }
 h2{
@@ -133,7 +138,7 @@ footer{
 background: white;
 background-position: center;
 text-align: center;
-font-family: "Roboto", sans-serif;
+font font-family: "Roboto", sans-serif;
 color: black;
 
 }
@@ -160,10 +165,10 @@ color: black;
   background-color:blue;
 }
 #content nav-content{
-  color: black;
+  text color: black;
 }
 .side{
-  padding : none;
+  padding
 }
 .admin-functions{
   position: relative;
