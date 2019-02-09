@@ -48,5 +48,16 @@ class TestOfficesEndPoints(RoutesBaseTest):
         }), content_type="application/json")
         result = json.loads(res.data.decode("utf-8"))
         self.assertEqual(result["status"], 201)
+        self.assertEqual(result["data"], [{'id': 23, 'name': 'dsd', 'type': 'trtr'}])
 
+
+
+    def test_create_office_with_bad_request(self):
+        res = self.client.post("api/v1/offices", data=json.dumps({
+            "name": "dsd",
+            "type": "trtr"
+        }), content_type="application/json")
+        result = json.loads(res.data.decode("utf-8"))
+        self.assertEqual(result["status"], 400)
+        self.assertEqual(result['error'], 'Must provide id, name and type')
 
