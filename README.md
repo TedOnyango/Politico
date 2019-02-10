@@ -1,7 +1,6 @@
 
 [![Build Status](https://travis-ci.org/TedOnyango/Politico.svg?branch=development)](https://travis-ci.org/TedOnyango/Politico)
 
-[![Coverage Status](https://coveralls.io/repos/github/TedOnyango/Politico/badge.svg?branch=development)](https://coveralls.io/github/TedOnyango/Politico?branch=development)
 
 **Politico**
  Politico is an electoral software that with various features as shown below.
