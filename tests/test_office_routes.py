@@ -60,4 +60,12 @@ class TestOfficesEndPoints(RoutesBaseTest):
         result = json.loads(res.data.decode("utf-8"))
         self.assertEqual(result["status"], 400)
         self.assertEqual(result['error'], 'Must provide id, name and type')
+    
+    def test_edit_office_not_found(self):
+        response = self.client.get("api/v1/offices")
+        self.assertEqual(response.status_code, 200)
+        result = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(result["status"], 200)
+        self.assertEqual(result["data"], [{'id': 23, 'name': 'dsd', 'type': 'trtr'}])
 
+    
