@@ -19,7 +19,7 @@ def create_party():
                                       "id": id,
                                       "name": name,
                                       "hqAddress": hqAddress,
-                                      "logoUrl": logoUrl,
+                                      "logoUrl": logoUrl
                                   }]
                                   }), 201)
 
