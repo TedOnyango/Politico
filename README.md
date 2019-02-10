@@ -3,7 +3,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/TedOnyango/Politico/badge.svg)](https://coveralls.io/github/TedOnyango/Politico)
 
 ```
-[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 # Politico
 Politico is an electoral software that with various features as shown below.
