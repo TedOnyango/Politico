@@ -54,15 +54,17 @@ def delete_party():
     id = data["id"]
     result = PartiesModel.delete_party(id)
     if result:
-        return make_response(jsonify({"status": 404,
+        return make_response(jsonify({"status": 200,
+                                  "data": "Party successfully deleted"
+                                  }), 200)
+    else:
+        return make_response(jsonify({"status": 400,
                                   "erro": "Party not found"
                                   }), 400)
         
         
         
-    return make_response(jsonify({"status": 200,
-                                  "data": "Party successfully deleted"
-                                  }), 200)
+    
     
 
 @endpoint.route('/parties/<int:id>/name', methods=['PATCH'])
