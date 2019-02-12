@@ -39,7 +39,7 @@ class RoutesBaseTest(unittest.TestCase):
                 "api/v1/parties", data=json.dumps(self.partytodelete), content_type="application/json")
         res = self.client.delete(
                 "/api/v1/parties/{}".format(0), content_type="application/json")
-        self.assertEqual(res.status_code, 404)
+        self.assertEqual(res.status_code, 405)
 
     def test_create_party(self):
         res = self.client.post("api/v1/offices", data=json.dumps({
