@@ -44,9 +44,14 @@ def get_specific_office(id):
 
 @endpoint.route('/offices/<int:id>/name', methods=['PATCH'])
 def edit_office(id):
-    data = request.get_json()
-    name = data["name"]
-
+    try:
+        data = request.get_json()
+        name = data["name"]
+    except:
+        return make_response(jsonify({"status": 404,
+                                  "error": "Party not found"
+                                  }), 404)
+    
     office  = OfficeModel.edit_office(id, name)
     if office:
         return make_response(jsonify({"status": 200,
@@ -57,9 +62,7 @@ def edit_office(id):
                                       }
                                   ]
                                   }), 200)
-    return make_response(jsonify({"status": 404,
-                                  "error": "Party not found"
-                                  }), 404)
+    
      
 
  

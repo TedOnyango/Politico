@@ -5,11 +5,17 @@ from app.api.v1.routes import endpoint
 
 @endpoint.route('/parties', methods=['POST'])
 def create_party():
-    data = request.get_json()
-    id = data["id"]
-    name = data["name"]
-    hqAddress = data["hqAddress"]
-    logoUrl = data["logoUrl"]
+    try:
+        data = request.get_json()
+        id = data["id"]
+        name = data["name"]
+        hqAddress = data["hqAddress"]
+        logoUrl = data["logoUrl"]
+    except:
+        return make_response(jsonify({"status": 400,
+									  "error": "Must provide id, name, hqAddress and logoUrl"
+									  }), 400)
+   
 
     newparty = PartiesModel(id=id, name=name, hqAddress=hqAddress, logoUrl=logoUrl)
     newparty.save_party()
@@ -29,19 +35,33 @@ def view_parties():
                                   "data": PartiesModel.view_parties()
                                   }), 200)
 
-@endpoint.route('/parties', methods=['GET'])
+@endpoint.route('/parties/<int:id>', methods=['GET'])
 def get_specific_party(id):
-    return make_response(jsonify({"status": 200,
-                                  "data": PartiesModel.get_specific_party(id)
+    party = PartiesModel.get_specific_party(id)
+    if party:
+        return make_response(jsonify({"status": 200,
+                                  "data": party
                                   }), 200)
+    else:
+        return make_response(jsonify({"status": 400,
+									  "error": "Must provide id, name, hqAddress and logoUrl"
+									  }), 400)
     
 
 @endpoint.route('/parties', methods=['DELETE'])
 def delete_party():
     data = request.get_json()
     id = data["id"]
+    result = PartiesModel.delete_party(id)
+    if result:
+        return make_response(jsonify({"status": 404,
+                                  "erro": "Party not found"
+                                  }), 400)
+        
+        
+        
     return make_response(jsonify({"status": 200,
-                                  "data": PartiesModel.delete_party(id)
+                                  "data": "Party successfully deleted"
                                   }), 200)
     
 
