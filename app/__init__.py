@@ -8,5 +8,3 @@ def createapp():
     app.register_blueprint(partyblueprint)
     app.register_blueprint(officeblueprint)
     return app
-
-
