@@ -3,6 +3,7 @@ from flask import request, make_response, jsonify
 from app.api.v1.models.partymodels import PartiesModel
 from app.api.v1.routes import endpoint
 
+
 @endpoint.route('/parties', methods=['POST'])
 def create_party():
     try:

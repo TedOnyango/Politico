@@ -25,7 +25,7 @@ class PartiesModel():
         }
         PARTIES.append(party)
 
-    @staticmethod
+  @staticmethod
     def delete_party(id):
         for party in PARTIES:
             if id == "id":
