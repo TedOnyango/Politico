@@ -25,10 +25,11 @@ class PartiesModel():
         }
         PARTIES.append(party)
 
-    @staticmethod
+  @staticmethod
     def delete_party(id):
-        if id == "id":
-            PARTIES.remove(party)
+        for party in PARTIES:
+            if id == "id":
+                PARTIES.remove(party)
 
     @staticmethod
     def edit_party(id, name):
